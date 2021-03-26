@@ -1,26 +1,33 @@
 package com.tuhinmitra.warehousebackend.data;
 
+import org.springframework.data.annotation.Id;
+
 public class Article {
 
-    private String id;
+    @Id
+    private String artId;
     private String name;
-    private long availableStock;
+    private int stock;
 
-    public Article(String id, String name, long availableStock){
-        this.id = id;
+    public Article(String artId, String name, int stock){
+        this.artId = artId;
         this.name = name;
-        this.availableStock = availableStock;
+        this.stock = stock;
     }
 
     public String getId() {
-        return id;
+        return artId;
     }
 
     public String getName() {
         return name;
     }
 
-    public long getAvailableStock() {
-        return availableStock;
+    public int getAvailableStock() {
+        return stock;
+    }
+
+    public void setAvailableStock(int stock) {
+        this.stock = stock;
     }
 }
