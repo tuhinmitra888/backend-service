@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "Delete Product",
+			"name": "Delete product",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -509,6 +509,51 @@
 						"api",
 						"product",
 						"Standing Desk"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete article",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/article/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"article",
+						"1"
 					]
 				}
 			},
