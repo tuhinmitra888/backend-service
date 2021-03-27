@@ -1,0 +1,1 @@
+server.error.include-message: always #Not a safe practice due to leaking too much information to client. Chose to do it to show the custom exception message.

@@ -3,6 +3,7 @@ package com.tuhinmitra.warehousebackend.service;
 import com.tuhinmitra.warehousebackend.controller.ArticleController;
 import com.tuhinmitra.warehousebackend.data.Article;
 import com.tuhinmitra.warehousebackend.exception.EntityNotFoundException;
+import com.tuhinmitra.warehousebackend.exception.OperationNotAllowedException;
 import com.tuhinmitra.warehousebackend.repository.ArticleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,8 +36,14 @@ public class ArticleService {
 
     public void updateStock(String id, int soldAmount){
         Article article = this.getById(id);
-        article.setAvailableStock(article.getAvailableStock() - soldAmount);
-        articleRepository.save(article);
+        int availableStock = article.getAvailableStock();
+        if(availableStock >= soldAmount){
+            article.setAvailableStock(availableStock - soldAmount);
+            articleRepository.save(article);
+        }
+        else{
+            throw new OperationNotAllowedException();
+        }
     }
 
 }

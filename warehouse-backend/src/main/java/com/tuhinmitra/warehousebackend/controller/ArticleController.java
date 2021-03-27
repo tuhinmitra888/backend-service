@@ -1,9 +1,12 @@
 package com.tuhinmitra.warehousebackend.controller;
 
 import com.tuhinmitra.warehousebackend.data.Article;
+import com.tuhinmitra.warehousebackend.exception.EntityNotFoundException;
 import com.tuhinmitra.warehousebackend.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,7 +25,10 @@ public class ArticleController {
 
     @GetMapping("/{id}")
     public Article findById(@PathVariable String id) {
-        return articleService.getById(id);
+        try {return articleService.getById(id);}
+        catch (EntityNotFoundException exception){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Article not found", exception);
+        }
     }
 
     @PostMapping

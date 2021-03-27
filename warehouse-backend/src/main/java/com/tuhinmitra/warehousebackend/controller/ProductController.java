@@ -2,9 +2,14 @@ package com.tuhinmitra.warehousebackend.controller;
 
 import com.tuhinmitra.warehousebackend.data.Article;
 import com.tuhinmitra.warehousebackend.data.Product;
+import com.tuhinmitra.warehousebackend.exception.EntityNotFoundException;
+import com.tuhinmitra.warehousebackend.exception.OperationNotAllowedException;
 import com.tuhinmitra.warehousebackend.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -23,7 +28,10 @@ public class ProductController {
 
     @GetMapping("/{name}")
     public Product findByName(@PathVariable String name){
-        return productService.getByName(name);
+        try{return productService.getByName(name);}
+        catch (EntityNotFoundException exception){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Product not found", exception);
+        }
     }
 
     @PostMapping
@@ -42,7 +50,15 @@ public class ProductController {
     }
 
     @DeleteMapping("/{name}")
-    public void deleteByName(@PathVariable String name){
-        productService.deleteByName(name);
+    public ResponseEntity deleteByName(@PathVariable String name){
+        try{productService.deleteByName(name);
+        return ResponseEntity.ok("Entity deleted");
+        }
+        catch (EntityNotFoundException exception){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Product not found", exception);
+        }
+        catch (OperationNotAllowedException exception){
+            throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE, "Article stock is too low", exception);
+        }
     }
 }
