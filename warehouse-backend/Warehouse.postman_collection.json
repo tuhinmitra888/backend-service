@@ -177,7 +177,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/articl/1",
+					"raw": "http://localhost:8080/api/article/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -185,7 +185,7 @@
 					"port": "8080",
 					"path": [
 						"api",
-						"articl",
+						"article",
 						"1"
 					]
 				}

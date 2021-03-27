@@ -1,6 +1,7 @@
 package com.tuhinmitra.warehousebackend.service;
 
 import com.tuhinmitra.warehousebackend.data.Product;
+import com.tuhinmitra.warehousebackend.exception.EntityNotFoundException;
 import com.tuhinmitra.warehousebackend.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +21,7 @@ public class ProductService {
     }
 
     public Product getByName(String name){
-        return productRepository.findByName(name);
+        return productRepository.findById(name).orElseThrow(EntityNotFoundException::new);
     }
 
     public Product save(Product product){
@@ -29,10 +30,10 @@ public class ProductService {
 
     public void deleteByName(String name){
         List<Product.ContainArticles> list = this.getByName(name).getContainArticles();
-        for(Product.ContainArticles conatinedArticle: list){
-            articleService.updateStock(conatinedArticle.getArtId(), conatinedArticle.getAmountOf());
+        for(Product.ContainArticles containedArticle: list){
+            articleService.updateStock(containedArticle.getArtId(), containedArticle.getAmountOf());
         }
-        productRepository.delete(productRepository.findByName(name));
+        productRepository.delete(this.getByName(name));
     }
 
 }

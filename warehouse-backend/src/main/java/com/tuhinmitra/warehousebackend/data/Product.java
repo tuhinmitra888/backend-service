@@ -8,7 +8,6 @@ import java.util.List;
 public class Product {
 
     @Id
-    private String id;
     private String name;
     private float price;
     List<ContainArticles> containArticles;
@@ -25,14 +24,6 @@ public class Product {
 
     public float getPrice() {
         return price;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public static class ContainArticles {

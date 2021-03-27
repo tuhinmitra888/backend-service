@@ -22,7 +22,7 @@ public class ArticleService {
     }
 
     public Article getById(String id){
-        return articleRepository.findByArtId(id);
+        return articleRepository.findById(id).orElseThrow(EntityNotFoundException::new);
     }
 
     public Article save(Article article){
@@ -34,7 +34,7 @@ public class ArticleService {
     }
 
     public void updateStock(String id, int soldAmount){
-        Article article = articleRepository.findByArtId(id);
+        Article article = this.getById(id);
         article.setAvailableStock(article.getAvailableStock() - soldAmount);
         articleRepository.save(article);
     }
