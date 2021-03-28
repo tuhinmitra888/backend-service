@@ -1,6 +1,5 @@
 package com.tuhinmitra.warehousebackend.service;
 
-import com.tuhinmitra.warehousebackend.controller.ArticleController;
 import com.tuhinmitra.warehousebackend.data.Article;
 import com.tuhinmitra.warehousebackend.exception.EntityNotFoundException;
 import com.tuhinmitra.warehousebackend.exception.OperationNotAllowedException;
@@ -34,9 +33,9 @@ public class ArticleService {
 
     public void updateStock(String id, int soldAmount){
         Article article = this.getById(id);
-        int availableStock = article.getAvailableStock();
+        int availableStock = article.getStock();
         if(availableStock >= soldAmount){
-            article.setAvailableStock(availableStock - soldAmount);
+            article.setStock(availableStock - soldAmount);
             articleRepository.save(article);
         }
         else{

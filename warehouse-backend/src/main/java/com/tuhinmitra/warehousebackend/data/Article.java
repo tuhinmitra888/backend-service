@@ -15,7 +15,7 @@ public class Article {
         this.stock = stock;
     }
 
-    public String getId() {
+    public String getArtId() {
         return artId;
     }
 
@@ -23,11 +23,11 @@ public class Article {
         return name;
     }
 
-    public int getAvailableStock() {
+    public int getStock() {
         return stock;
     }
 
-    public void setAvailableStock(int stock) {
+    public void setStock(int stock) {
         this.stock = stock;
     }
 }
