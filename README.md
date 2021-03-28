@@ -17,28 +17,29 @@
 - This code is not peer reviewed - any feedback/improvement ideas from peer review needs to be addressed too
 
 ## How to run the backend service?
-From JAR:
+<b>From source code:<b> (Gradle and Java need to be installed in the host system)
+1. Clone the git repository and go to the root folder
+2. Start the Mongo DB docker container using the following command (the docker daemon needs to be started before)-
+`docker-compose -f docker-compose.yml up -d`
+3. Go to `warehouse-backend` folder and build the project using
+`gradle build` or from an IDE please run the `WarehouseBackendApplication.java` file
+4. By default the backend service will run on port 8080, to modify it change the port in `application.yaml` file under `warehouse-backend` folder   
+
+<b>From JAR:<b>
 1. Clone the git repository and go to the root folder
 2. Start the Mongo DB docker container using the following command-
 `docker-compose -f docker-compose.yml up -d`
 3. Run the JAR file, using-
 `java -jar warehouse-backend\build\libs\warehouse-backend-0.0.1-SNAPSHOT.jar`
-
-From source code: (Gradle and Java need to be installed in the host system)
-1. Clone the git repository and go to the root folder
-2. Start the Mongo DB docker container using the following command-
-`docker-compose -f docker-compose.yml up -d`
-3. Go to `warehouse-backend` folder and build the project using
-`gradle build` or from an IDE please run the `WarehouseBackendApplication.java` file 
-
+4. By default the backend service will run on port 8080, to modify it change the port in `application.yaml` file under `warehouse-backend` folder, rebuild and re-run the jar
 
 ## How to run unit tests?
 The unit tests are in the `WarehouseBackendApplicationTests.java` file. To run the unit tests -
 1. Go to `warehouse-backend` folder and run the tests using
 `gradle test` or using an IDE please run the `WarehouseBackendApplicationTests.java` file
 
-
 ## How to run Postman tests?
+The backend service needs to be up and running before the tests are run.
 1. Launch Postman and import the `local.postman_environment.json` (available in `warehouse-backend` folder in the repository) environment
 2. Import the collection `Warehouse.postman_collection.json` (available in `warehouse-backend` folder in the repository)
 3. Choose the environment configured in step 1
