@@ -1,5 +1,5 @@
 ## Description
-* This repository consists a backend service written in Sprintboot (version 2.4.4) and Java 11 (version 11.0.9). Gradle (version 6.8.3) is uded as a build tool
+* This repository consists a backend service written in Springboot (version 2.4.4) and Java 11 (version 11.0.9). Gradle (version 6.8.3) is used as a build tool
 * The development environment was as follows:
 - Operating System: Windows 10
 - Postman is ued to the API endpoints 
@@ -16,7 +16,7 @@
 - I only implemented basic authentication, if business requires some other form of authentication that can be implemented
 - This code is not peer reviewed - any feedback/improvement ideas from peer review needs to be addressed too
 
-## How to run the backened service?
+## How to run the backend service?
 From JAR:
 1. Clone the git repository and go to the root folder
 2. Start the Mongo DB docker container using the following command-
@@ -35,5 +35,12 @@ From source code: (Gradle and Java need to be installed in the host system)
 ## How to run unit tests?
 The unit tests are in the `WarehouseBackendApplicationTests.java` file. To run the unit tests -
 1. Go to `warehouse-backend` folder and run the tests using
-`gradle test` or using an IDE please run the `WarehouseBackendApplicationTests.java` file 
+`gradle test` or using an IDE please run the `WarehouseBackendApplicationTests.java` file
 
+
+## How to run Postman tests?
+1. Launch Postman and import the `local.postman_environment.json` (available in `warehouse-backend` folder in the repository) environment
+2. Import the collection `Warehouse.postman_collection.json` (available in `warehouse-backend` folder in the repository)
+3. Choose the environment configured in step 1
+4. The tests need to have a data set up, hence please run -
+`Load articles` and `Load products` requests first
