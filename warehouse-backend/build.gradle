@@ -4,6 +4,12 @@ plugins {
 	id 'java'
 }
 
+apply plugin: 'application'
+mainClassName = "com.tuhinmitra.warehousebackend.WarehouseBackendApplication"
+applicationDefaultJvmArgs = [
+		"-Djava.util.logging.config.file=src/main/resources/logging.properties"
+]
+
 group = 'com.tuhinmitra'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
