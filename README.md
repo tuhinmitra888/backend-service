@@ -21,7 +21,7 @@
 1. Clone the git repository and go to the root folder
 2. Start the Mongo DB docker container using the following command (the docker daemon needs to be started before)-
 `docker-compose -f docker-compose.yml up -d`
-3. Go to `warehouse-backend` folder and build the project using
+3. Go to `warehouse-backend` folder and run the project using
 `gradle run` or from an IDE please run the `WarehouseBackendApplication.java` file
 4. By default the backend service will run on port 8080, to modify it change the port in `application.yaml` file under `warehouse-backend` folder   
 
