@@ -2,7 +2,7 @@
 * This repository consists a backend service written in Springboot (version 2.4.4) and Java 11 (version 11.0.9). Gradle (version 6.8.3) is used as a build tool
 * The development environment was as follows:
     - Operating System: Windows 10
-    - Postman is ued to the API endpoints 
+    - Postman is ued to test the API endpoints 
     - Mongo DB docker image has been used to store the data
     - Development IDE: Intellij IDEA community edition
 
