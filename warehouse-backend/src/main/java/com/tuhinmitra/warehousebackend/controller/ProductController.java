@@ -50,8 +50,7 @@ public class ProductController {
 
     @DeleteMapping("/{name}")
     public ResponseEntity deleteByName(@PathVariable String name){
-        try{productService.deleteByName(name);
-        return ResponseEntity.ok("Entity deleted");
+        try{return productService.deleteByName(name);
         }
         catch (EntityNotFoundException exception){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Product not found", exception);

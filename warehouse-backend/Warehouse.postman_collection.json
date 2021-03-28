@@ -35,12 +35,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/product/Dining Chair",
-					"protocol": "http",
+					"raw": "{{base_url}}/api/product/Dining Chair",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "8080",
 					"path": [
 						"api",
 						"product",
@@ -83,12 +81,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/product",
-					"protocol": "http",
+					"raw": "{{base_url}}/api/product",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "8080",
 					"path": [
 						"api",
 						"product"
@@ -130,12 +126,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/article",
-					"protocol": "http",
+					"raw": "{{base_url}}/api/article",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "8080",
 					"path": [
 						"api",
 						"article"
@@ -177,12 +171,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/article/1",
-					"protocol": "http",
+					"raw": "{{base_url}}/api/article/1",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "8080",
 					"path": [
 						"api",
 						"article",
@@ -222,12 +214,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/product",
-					"protocol": "http",
+					"raw": "{{base_url}}/api/product",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "8080",
 					"path": [
 						"api",
 						"product"
@@ -266,12 +256,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/article",
-					"protocol": "http",
+					"raw": "{{base_url}}/api/article",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "8080",
 					"path": [
 						"api",
 						"article"
@@ -313,12 +301,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/article/67",
-					"protocol": "http",
+					"raw": "{{base_url}}/api/article/67",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "8080",
 					"path": [
 						"api",
 						"article",
@@ -361,12 +347,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/product/NegativeProduct",
-					"protocol": "http",
+					"raw": "{{base_url}}/api/product/NegativeProduct",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "8080",
 					"path": [
 						"api",
 						"product",
@@ -406,12 +390,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/product/NegativeProduct",
-					"protocol": "http",
+					"raw": "{{base_url}}/api/product/NegativeProduct",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "8080",
 					"path": [
 						"api",
 						"product",
@@ -454,12 +436,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/product/Standing Desk",
-					"protocol": "http",
+					"raw": "{{base_url}}/api/product/Standing Desk",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "8080",
 					"path": [
 						"api",
 						"product",
@@ -499,12 +479,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/product/Standing Desk",
-					"protocol": "http",
+					"raw": "{{base_url}}/api/product/Standing Desk",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "8080",
 					"path": [
 						"api",
 						"product",
@@ -544,12 +522,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/article/1",
-					"protocol": "http",
+					"raw": "{{base_url}}/api/article/1",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "8080",
 					"path": [
 						"api",
 						"article",

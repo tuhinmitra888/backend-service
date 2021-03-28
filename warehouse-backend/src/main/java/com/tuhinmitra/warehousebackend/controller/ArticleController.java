@@ -48,7 +48,6 @@ public class ArticleController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity deleteById(@PathVariable String id) {
-        articleService.deleteById(id);
-        return ResponseEntity.ok("Entity deleted");
+        return articleService.deleteById(id);
     }
 }

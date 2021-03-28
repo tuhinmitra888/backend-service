@@ -4,6 +4,7 @@ import com.tuhinmitra.warehousebackend.data.Product;
 import com.tuhinmitra.warehousebackend.exception.EntityNotFoundException;
 import com.tuhinmitra.warehousebackend.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -28,12 +29,13 @@ public class ProductService {
         return productRepository.save(product);
     }
 
-    public void deleteByName(String name){
+    public ResponseEntity<String> deleteByName(String name){
         List<Product.ContainArticles> list = this.getByName(name).getContainArticles();
         for(Product.ContainArticles containedArticle: list){
             articleService.updateStock(containedArticle.getArtId(), containedArticle.getAmountOf());
         }
         productRepository.delete(this.getByName(name));
+        return ResponseEntity.ok("Entity deleted");
     }
 
 }

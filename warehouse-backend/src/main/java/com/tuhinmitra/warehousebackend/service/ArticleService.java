@@ -5,6 +5,7 @@ import com.tuhinmitra.warehousebackend.exception.EntityNotFoundException;
 import com.tuhinmitra.warehousebackend.exception.OperationNotAllowedException;
 import com.tuhinmitra.warehousebackend.repository.ArticleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -27,8 +28,9 @@ public class ArticleService {
         return articleRepository.save(article);
     }
 
-    public void deleteById(String id){
+    public ResponseEntity deleteById(String id){
         articleRepository.deleteById(id);
+        return ResponseEntity.ok("Entity deleted");
     }
 
     public void updateStock(String id, int soldAmount){

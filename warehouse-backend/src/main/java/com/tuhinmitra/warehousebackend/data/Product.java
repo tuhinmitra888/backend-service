@@ -9,11 +9,11 @@ public class Product {
 
     @Id
     private String name;
-    private float price;
+    private Double price;
     List<ContainArticles> containArticles;
 
     @JsonCreator
-    public Product(String name, float price, List<ContainArticles> containArticles) {
+    public Product(String name, Double price, List<ContainArticles> containArticles) {
         this.name = name;
         this.price = price;
         this.containArticles = containArticles;
@@ -22,7 +22,7 @@ public class Product {
         return name;
     }
 
-    public float getPrice() {
+    public Double getPrice() {
         return price;
     }
 

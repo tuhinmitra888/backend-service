@@ -46,4 +46,9 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
+    @Bean
+    public RestAuthenticationEntryPoint restAuthenticationEntryPointBean(){
+        return new RestAuthenticationEntryPoint();
+    }
 }
