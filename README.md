@@ -7,7 +7,7 @@
     - Development IDE: Intellij IDEA community edition
 
 ## Choices made:
-* I took the liberty to rename some keys in the json files to be more compliant to suggest naming standard in java and spring boot - in a real project scenario I would like to get it clarified with technical product owner and the team
+* I took the liberty to rename some keys in the json files to be more compliant to the suggested naming standard in java and spring boot - in a real project scenario I would like to get it clarified with technical product owner and the team
 * I found that the provided `products.json` file did not have `price` key/attribute - I would discuss that in a technical refinement session if it were a real life project
 * I have some questions about removal of product functionality - hence I made an assumption and chose to remove the product. In real life project I would like to verify the assumptions.
 * What can be picked in next few iterations:
