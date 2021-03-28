@@ -35,13 +35,12 @@ public class ProductController {
     }
 
     @PostMapping
-    public ArrayList<Product> create(@RequestBody HashMap<String, List<Product>> products){
-        ArrayList<Product> productArrayList = new ArrayList<>();
+    public ResponseEntity create(@RequestBody HashMap<String, List<Product>> products){
         List<Product> productList = products.get("products");
         for(Product product: productList){
-            productArrayList.add(productService.save(product));
+            productService.save(product);
         }
-        return productArrayList;
+        return ResponseEntity.ok("Product(s) is created");
     }
 
     @PutMapping("/{name}")

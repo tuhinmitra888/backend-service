@@ -33,13 +33,12 @@ public class ArticleController {
     }
 
     @PostMapping
-    public ArrayList<Article> create(@RequestBody HashMap<String, List<Article>> inventory) {
-        ArrayList<Article> articleArrayList = new ArrayList<>();
+    public ResponseEntity create(@RequestBody HashMap<String, List<Article>> inventory) {
         List<Article> articleList = inventory.get("inventory");
         for (Article article : articleList) {
-            articleArrayList.add(articleService.save(article));
+            articleService.save(article);
         }
-        return articleArrayList;
+        return ResponseEntity.ok("Article(s) is created");
     }
 
     @PutMapping("/{id}")
