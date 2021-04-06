@@ -6,15 +6,6 @@
     - Mongo DB docker image has been used to store the data
     - Development IDE: Intellij IDEA community edition
 
-## Choices made:
-* I took the liberty to rename some keys in the json files to be more compliant to the suggested naming standard in java and spring boot - in a real project scenario I would like to get it clarified with technical product owner and the team
-* I found that the provided `products.json` file did not have `price` key/attribute - I would discuss that in a technical refinement session if it were a real life project
-* I have some questions about removal of product functionality - hence I made an assumption and chose to remove the product. In real life project I would like to verify the assumptions.
-* What can be picked in next few iterations:
-    - Unit tests - I implemented the unit tests for Controller level, which can be enhanced
-    - Handling the exceptions can be done in more robust and more sophisticated way
-    - I only implemented basic authentication, if business requires some other form of authentication that can be implemented
-    - This code is not peer reviewed - any feedback/improvement ideas from peer review needs to be addressed too
 
 ## How to run the backend service?
 <b>From source code:<b> (Gradle and Java need to be installed in the host system)
